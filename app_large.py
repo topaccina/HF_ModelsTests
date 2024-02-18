@@ -2,9 +2,7 @@ from transformers import pipeline
 import glob
 import pandas as pd
 import warnings
-from dotenv import load_dotenv, find_dotenv
 
-load_dotenv(find_dotenv())
 
 warnings.filterwarnings("ignore")
 
@@ -24,4 +22,4 @@ for resp in response:
 output = pd.DataFrame({"pngFileName": pngList, "Caption": generated_text})
 
 # export to a csv
-output.to_csv("./output/generated_text.csv", index=False)
+output.to_csv("./output/generated_text_large.csv", index=False)
